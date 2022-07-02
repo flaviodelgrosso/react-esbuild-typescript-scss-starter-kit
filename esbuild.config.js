@@ -14,7 +14,7 @@ esbuild
     plugins: [
       sassPlugin({
         async transform(source) {
-          const { css } = await postcss([autoprefixer]).process(source);
+          const { css } = await postcss([autoprefixer]).process(source, { from: undefined });
           return css;
         },
       }),
